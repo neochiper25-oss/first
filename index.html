@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulau777 - Landing Page Modern</title>
+  <meta name="description" content="Landing page modern Pulau777 dengan tampilan premium, responsif, dan fokus pada konversi pengguna." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08111f;
+      --bg-soft: #0d1830;
+      --card: rgba(255,255,255,0.08);
+      --card-border: rgba(255,255,255,0.12);
+      --text: #ecf4ff;
+      --muted: #9ab0d0;
+      --primary: #4da3ff;
+      --primary-2: #6c63ff;
+      --accent: #2ee6a6;
+      --warning: #ffd166;
+      --shadow: 0 20px 70px rgba(0,0,0,0.35);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(108,99,255,0.20), transparent 28%),
+        radial-gradient(circle at top right, rgba(77,163,255,0.18), transparent 24%),
+        radial-gradient(circle at bottom center, rgba(46,230,166,0.10), transparent 26%),
+        linear-gradient(180deg, #07101d 0%, #091426 100%);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 16, 29, 0.70);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      font-size: 1.05rem;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 12px 30px rgba(77,163,255,0.28);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 700;
+      font-size: 0.96rem;
+      transition: 0.25s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 15px 30px rgba(77,163,255,0.25);
+    }
+    .btn-outline {
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .hero {
+      position: relative;
+      padding: 92px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #d6e6ff;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(46,230,166,0.16);
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.4rem, 4.4vw, 4.8rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #bcd8ff 50%, #7bb8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      max-width: 650px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: 6px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 30px;
+      padding: 24px;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.04));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+      border-radius: 24px;
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .panel-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .mini-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: rgba(46,230,166,0.12);
+      color: #b8ffe8;
+      border: 1px solid rgba(46,230,166,0.20);
+    }
+
+    .promo-card {
+      border-radius: 24px;
+      padding: 22px;
+      background: linear-gradient(135deg, rgba(77,163,255,0.20), rgba(108,99,255,0.18));
+      border: 1px solid rgba(255,255,255,0.10);
+      margin-bottom: 18px;
+    }
+
+    .promo-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+    }
+
+    .promo-card p {
+      margin: 0;
+      color: #d7e5fb;
+      font-size: 0.96rem;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .icon {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.08);
+      font-weight: 800;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.84rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9bc7ff;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.1;
+      margin: 0 0 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card h3 {
+      margin: 14px 0 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      position: relative;
+      padding: 22px 22px 22px 82px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 22px;
+      top: 22px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      font-weight: 800;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .highlight {
+      padding: 26px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(46,230,166,0.12), rgba(77,163,255,0.10));
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .highlight ul {
+      margin: 16px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .highlight li + li { margin-top: 10px; }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      border-radius: 20px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    details p {
+      margin: 12px 0 0;
+      color: var(--muted);
+    }
+
+    .cta {
+      padding: 48px 0 80px;
+    }
+
+    .cta-box {
+      padding: 34px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(108,99,255,0.22), rgba(77,163,255,0.18), rgba(46,230,166,0.12));
+      border: 1px solid rgba(255,255,255,0.10);
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      margin-bottom: 14px;
+    }
+
+    .cta-box p {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: #d8e5f8;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      padding: 24px 0 36px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid, .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 72px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .nav {
+        padding: 12px 0;
+      }
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions, .nav-actions {
+        width: 100%;
+      }
+      .nav {
+        flex-wrap: wrap;
+      }
+      .btn {
+        width: 100%;
+      }
+      .cta-box, .hero-card, .card, .step, .highlight {
+        padding: 22px;
+      }
+      h1 {
+        font-size: 2.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <span class="brand-badge">P7</span>
+        <span>Pulau777</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#fitur">Fitur</a>
+        <a href="#cara-kerja">Cara Kerja</a>
+        <a href="#keunggulan">Keunggulan</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="#fitur">Lihat Detail</a>
+        <a class="btn btn-primary" href="#daftar">Mulai Sekarang</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Platform modern dengan tampilan premium dan responsif</div>
+          <h1><span class="gradient-text">Pulau777</span> hadir dengan pengalaman landing page yang cepat, bersih, dan fokus ke konversi.</h1>
+          <p>
+            Bangun kesan pertama yang kuat dengan desain modern, struktur informasi yang rapi, dan elemen visual yang dibuat untuk meningkatkan rasa percaya pengguna. Landing page ini dirancang agar nyaman dilihat di desktop maupun mobile, sekaligus tetap ringan saat dibuka.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#daftar">Daftar Sekarang</a>
+            <a class="btn btn-outline" href="#cara-kerja">Pelajari Alurnya</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <strong>Fast Loading</strong>
+              <span>Struktur ringan untuk performa halaman yang lebih cepat.</span>
+            </div>
+            <div class="stat">
+              <strong>Mobile First</strong>
+              <span>Tampilan tetap rapi di smartphone, tablet, dan desktop.</span>
+            </div>
+            <div class="stat">
+              <strong>High Conversion</strong>
+              <span>CTA jelas, headline kuat, dan susunan konten yang terarah.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card glass">
+          <div class="panel">
+            <div class="panel-top">
+              <span>Dashboard Preview</span>
+              <span class="mini-pill">Live Experience</span>
+            </div>
+            <div class="promo-card">
+              <h3>Desain yang terasa eksklusif</h3>
+              <p>Komposisi warna modern, hierarki tipografi yang jelas, dan blok informasi yang dibuat mudah dipahami dalam sekali lihat.</p>
+            </div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="icon">01</div>
+                <div>
+                  <strong>Navigasi Ringkas</strong>
+                  <div style="color: var(--muted); font-size: 0.93rem;">Pengunjung cepat menemukan informasi utama tanpa harus scroll berlebihan.</div>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="icon">02</div>
+                <div>
+                  <strong>Visual Lebih Meyakinkan</strong>
+                  <div style="color: var(--muted); font-size: 0.93rem;">Setiap section dibuat kontras dan nyaman dibaca untuk mendukung keputusan pengguna.</div>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="icon">03</div>
+                <div>
+                  <strong>Call To Action Jelas</strong>
+                  <div style="color: var(--muted); font-size: 0.93rem;">Tombol utama ditempatkan strategis agar alur interaksi terasa natural.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fitur">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">Fitur Utama</div>
+          <h2>Dirancang untuk tampil premium tanpa mengorbankan kecepatan.</h2>
+          <p>Landing page ini menggabungkan desain modern, struktur modular, dan fokus pada pengalaman pengguna agar brand Pulau777 terlihat lebih profesional sejak detik pertama.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">A</div>
+            <h3>Hero Section Kuat</h3>
+            <p>Bagian atas halaman dibuat dengan headline yang tegas, deskripsi yang jelas, dan tombol aksi yang langsung terlihat oleh pengunjung.</p>
+          </div>
+          <div class="card">
+            <div class="icon">B</div>
+            <h3>Layout Responsif</h3>
+            <p>Semua komponen menyesuaikan lebar layar secara otomatis supaya pengalaman pengguna tetap konsisten di berbagai perangkat.</p>
+          </div>
+          <div class="card">
+            <div class="icon">C</div>
+            <h3>Section Modular</h3>
+            <p>Kamu bisa dengan mudah menambah section promo, benefit, testimoni, statistik, atau FAQ sesuai kebutuhan halaman kampanye.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cara-kerja">
+      <div class="container grid-2">
+        <div>
+          <div class="section-head">
+            <div class="section-tag">Cara Kerja</div>
+            <h2>Alur sederhana yang bikin pengunjung cepat paham.</h2>
+            <p>Struktur landing page yang baik bukan cuma soal tampilan, tapi juga soal bagaimana informasi dipresentasikan secara bertahap sampai pengguna terdorong melakukan aksi.</p>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <h3>Tarik perhatian di bagian pertama</h3>
+              <p>Headline utama langsung menegaskan identitas Pulau777, sementara subheadline menjelaskan nilai utama yang ditawarkan halaman ini.</p>
+            </div>
+            <div class="step">
+              <h3>Bangun rasa percaya</h3>
+              <p>Statistik, fitur, dan keunggulan disusun untuk memperkuat impresi bahwa platform ini tampil serius, modern, dan siap digunakan.</p>
+            </div>
+            <div class="step">
+              <h3>Arahkan ke tombol aksi</h3>
+              <p>Setelah informasi utama terbaca, pengguna diarahkan ke tombol CTA yang muncul di titik-titik strategis dalam halaman.</p>
+            </div>
+          </div>
+        </div>
+        <div class="highlight glass">
+          <div class="section-tag">Kenapa efektif</div>
+          <h2 style="font-size: 2rem; margin-bottom: 8px;">Landing page yang bagus harus jelas, cepat, dan enak dilihat.</h2>
+          <p style="margin:0; color: var(--muted);">Pulau777 bisa tampil lebih kuat ketika pesan utama tidak tenggelam oleh elemen yang terlalu ramai. Karena itu, versi ini dibuat dengan fokus tinggi pada keterbacaan, ritme visual, dan kemudahan interaksi.</p>
+          <ul>
+            <li>Palet warna modern memberi kesan premium dan rapi.</li>
+            <li>Blok konten dibuat singkat agar mudah dipindai pengguna.</li>
+            <li>CTA dibuat menonjol tanpa terasa memaksa.</li>
+            <li>FAQ membantu menjawab keraguan umum dengan cepat.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="keunggulan">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">Keunggulan</div>
+          <h2>Tampilan elegan dengan fondasi yang mudah dikembangkan.</h2>
+          <p>Kamu bisa memakai landing page ini sebagai halaman utama promosi, kampanye iklan, microsite brand, atau halaman pembuka sebelum masuk ke sistem yang lebih besar.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">UX</div>
+            <h3>Fokus pada pengalaman pengguna</h3>
+            <p>Jarak antar elemen, ukuran huruf, dan susunan section dirancang agar halaman mudah dibaca sejak scroll pertama.</p>
+          </div>
+          <div class="card">
+            <div class="icon">UI</div>
+            <h3>Visual modern dan mewah</h3>
+            <p>Efek glassmorphism ringan, gradien halus, dan bayangan lembut membantu halaman terlihat lebih premium tanpa berat.</p>
+          </div>
+          <div class="card">
+            <div class="icon">SEO</div>
+            <h3>Mudah dioptimalkan</h3>
+            <p>Struktur HTML rapi sehingga lebih gampang dikembangkan menjadi landing page SEO-friendly dengan meta, schema, dan section konten tambahan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">FAQ</div>
+          <h2>Pertanyaan yang sering muncul.</h2>
+          <p>Bagian ini membantu mengurangi kebingungan pengguna sekaligus memperjelas apa yang bisa dikembangkan lebih lanjut dari landing page Pulau777 ini.</p>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>Apakah landing page ini bisa dipasang di Cloudflare Pages?</summary>
+            <p>Bisa. File ini berbentuk HTML tunggal dengan CSS internal sehingga sangat mudah dipasang ke Cloudflare Pages, Netlify, atau shared hosting biasa.</p>
+          </details>
+          <details>
+            <summary>Apakah desain ini bisa diubah jadi versi lebih mewah?</summary>
+            <p>Bisa. Kamu bisa menambahkan background image, animasi ringan, icon SVG, section testimoni, countdown, dan blok bonus agar tampil lebih agresif secara visual.</p>
+          </details>
+          <details>
+            <summary>Apakah bisa dibuat versi dengan form login atau daftar?</summary>
+            <p>Bisa. Form login, form daftar, atau tombol CTA yang diarahkan ke URL tertentu bisa ditambahkan dengan mudah pada section hero atau CTA bawah.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="daftar">
+      <div class="container">
+        <div class="cta-box glass">
+          <div class="section-tag">Mulai Sekarang</div>
+          <h2>Siapkan Pulau777 dengan landing page yang lebih siap jual.</h2>
+          <p>Gunakan desain ini sebagai pondasi awal, lalu lanjutkan dengan penambahan form, banner promosi, testimoni, statistik, atau integrasi CTA yang kamu butuhkan untuk campaign berikutnya.</p>
+          <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
+            <a class="btn btn-primary" href="#home">Gunakan Template Ini</a>
+            <a class="btn btn-outline" href="#fitur">Lihat Semua Section</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>© 2026 Pulau777. All rights reserved.</div>
+      <div>Landing page modern, responsif, dan siap dikembangkan.</div>
+    </div>
+  </footer>
+</body>
+</html>
